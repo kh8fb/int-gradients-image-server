@@ -27,10 +27,10 @@ Activate the server directly from the command line with
 
 OR
 
-	intgrads -lb /path/to/lanet_model.pth --cuda
+	intgrads-images -lb /path/to/lanet_model.pth --cuda
 
 This command starts the server and load the model so that it's ready to go when called upon.
-The pretrained and finetuned BiT and LaNet models can be downloaded from this [Google drive folder]()
+The pretrained and finetuned BiT and LaNet models can be downloaded from this [Google drive folder](https://drive.google.com/drive/u/0/folders/1KtuVv2GPtbcuy9fifuCXySuqQhcPc-nO)
 
 You can provide additional arguments such as the hostname, port, and a cuda flag.
 
