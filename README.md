@@ -11,7 +11,7 @@ First, create an Anaconda environment:
 
 Next, activate the environment, `cd` into this project's directory and install the requirements with
 
-      conda activate int-gradients-server
+      conda activate int-gradients-image-server
       pip install -e .
 
 Finally, `cd` into the cloned intermediate-gradients directory and run
