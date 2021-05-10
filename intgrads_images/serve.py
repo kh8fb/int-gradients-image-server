@@ -7,6 +7,7 @@ from collections import OrderedDict
 from flask import Flask, request, send_file
 import gzip
 from io import BytesIO
+import numpy as np
 import shutil
 import torch
 
@@ -88,7 +89,7 @@ def run_model():
 )
 @click.option(
     "--lanet-path",
-    "-llb",
+    "-lp",
     required=False,
     help="Path to the pretrained LaNet model. Specifiy only one model path.",
     default=None,

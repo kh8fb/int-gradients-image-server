@@ -117,7 +117,7 @@ def run_models(model_name, model, transforms, img, device, target_class):
                                      target=target_class,
                                      n_steps=50)
 
-    grads_dict = {"intermediate_grads": grads.to("cpu"),
+    grads_dict = {"integrated_directional_grads": grads.to("cpu"),
                   "step_sizes": step_sizes.to("cpu"),
                   "intermediates": intermediates.to("cpu"),
                   "integrated_grads": integrated_grads.to("cpu")}
