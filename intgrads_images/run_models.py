@@ -3,7 +3,6 @@ Run the model with integrated and intermediate gradients.
 """
 
 from captum.attr import IntegratedGradients
-import logging
 import torch
 
 from intermediate_gradients.intermediate_gradients import IntermediateGradients

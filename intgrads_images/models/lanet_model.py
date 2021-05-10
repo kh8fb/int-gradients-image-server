@@ -1,7 +1,6 @@
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.utils
-import sys
 from collections import namedtuple
 import torch
 import torchvision.transforms as transforms
