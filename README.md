@@ -7,7 +7,7 @@ This package requires the installation of both this repository as well as [Inter
 
 First, create an Anaconda environment:
 
-       conda create -n int-gradients-image-server
+       conda create -n int-gradients-image-server python=3.8
 
 Next, activate the environment, `cd` into this project's directory and install the requirements with
 
