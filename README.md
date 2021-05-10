@@ -1,5 +1,5 @@
 # int-gradients-image-server
-A cli-based server for obtaining [integrated directional gradients](https://github.com/kh8fb/intermediate-gradients) and [integrated gradients](https://arxiv.org/abs/1703.01365) from given images using `curl` requests.
+A cli-based server for obtaining [integrated directional gradients](https://github.com/kh8fb/intermediate-gradients) and [integrated gradients](https://arxiv.org/abs/1703.01365) from images using `curl` requests.
 
 ### Installation
 
