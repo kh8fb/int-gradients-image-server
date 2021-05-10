@@ -18,7 +18,6 @@ from .run_models import run_models
 
 app = Flask(__name__)
 MODEL_DICT = {}
-BASELINE = ""
 DEVICE = None
 
 @app.route("/model/", methods=["POST"])
@@ -37,7 +36,7 @@ def run_model():
         img_classification = data["target_class"]
         target_class = classification_dict[img_classification]
 
-        img = np.array(img_data)
+        img = np.array(img_data, dtype=np.uint8)
 
         grads_dict = run_models(MODEL_DICT["model_name"],
                                 MODEL_DICT["model"],
@@ -101,9 +100,7 @@ def serve(
         bit_path=None,
         lanet_path=None
 ):
-    global MODEL_DICT, DEVICE, BASELINE
-
-    BASELINE = str(baseline)
+    global MODEL_DICT, DEVICE
 
     if cuda:
         DEVICE = torch.device("cuda:0")

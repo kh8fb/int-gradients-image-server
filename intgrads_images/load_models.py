@@ -5,8 +5,8 @@ Interface for loading the supported image classification models.
 import torch
 import torchvision as tv
 
-from .models.bit_model.py import KNOWN_MODELS
-from .models.lanet_model.py import NetworkCIFAR, gen_code_from_list, translator
+from .models.bit_model import KNOWN_MODELS
+from .models.lanet_model import NetworkCIFAR, gen_code_from_list, translator
 
 # dictionary with target value for each classification
 classification_dict = {
@@ -127,7 +127,7 @@ def load_models(device, bit_path, lanet_path):
         bit_model, bit_transforms = load_bit_model(str(bit_path), device)
         return {"model_name": "bit", "model": bit_model, "transforms": bit_transforms}
     elif lanet_path is not None:
-        lanet__model, lanet_transforms = load_lanet_model(str(lanet_path), device)
+        lanet_model, lanet_transforms = load_lanet_model(str(lanet_path), device)
         return {"model_name": "lanet", "model": lanet_model, "transforms": lanet_transforms}
     # add additional models here
     else:

@@ -3,6 +3,7 @@ Script for converting an input image into JSON.
 """
 
 from PIL import Image
+import numpy as np
 import json
 import sys
 
@@ -28,7 +29,7 @@ def convert_img_to_json(img_path, classification, save_path):
     img = Image.open(img_path)
     
     json_dict = {
-        "img_data": list(img.getdata()),
+        "img_data": np.asarray(img).tolist(),
         "target_class": classification
     }
     

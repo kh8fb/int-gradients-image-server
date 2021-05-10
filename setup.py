@@ -9,13 +9,12 @@ setup(
         ],
     },
     install_requires=[
-        "captum",
+        "captum==0.2.0",
         "click",
         "click_completion",
         "logbook",
         "flask",
         "torch",
         "torchvision",
-        "transformers",
     ],
 )
