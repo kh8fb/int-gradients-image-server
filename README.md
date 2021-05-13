@@ -68,9 +68,9 @@ The first hostname result tells you which address to use in your `curl` request.
 
 This trained Swin Transformer model received the following results
 
-|       Model      |  BiT    | LaMCTS |
-|---------|:------:|:-------:|:------:|
-|  CIFAR-10 Score  |  98.50  |  99.03 |
+|      Model     |  BiT  | LaMCTS |
+|:--------------:|:-----:|:------:|
+| CIFAR-10 Score | 98.50 |  99.03 |
 
 ### Citations
 
