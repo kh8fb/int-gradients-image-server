@@ -74,15 +74,19 @@ This trained Swin Transformer model received the following results
 
 ### Citations
 
+```
 @article{DBLP:journals/corr/abs-1912-11370,
   author    = {Alexander Kolesnikov and Lucas Beyer and Xiaohua Zhai and Joan Puigcerver and Jessica Yung and Sylvain Gelly and Neil Houlsby},
   title     = {Large Scale Learning of General Visual Representations for Transfer},
   year      = {2019},
   url       = {http://arxiv.org/abs/1912.11370}}
+```
 
+```
 @article{DBLP:journals/corr/abs-2007-00708,
   author    = {Linnan Wang and Rodrigo Fonseca and Yuandong Tian},
   title     = {Learning Search Space Partition for Black-box Optimization using Monte
                Carlo Tree Search},
   year      = {2020},
   url       = {https://arxiv.org/abs/2007.00708}}
+```
