@@ -62,3 +62,27 @@ If you want to run int-grads-server on a remote server, you can specify the host
 The first hostname result tells you which address to use in your `curl` request.
 
       curl http://10.123.45.110/:8008/model/ --data @input_json_file.json --output saved_file.gzip -H "Content-Type:application/json; chartset=utf-8"`
+
+
+### Model Results
+
+This trained Swin Transformer model received the following results
+
+|       Model      |  BiT    | LaMCTS |
+|---------|:------:|:-------:|:------:|
+|  CIFAR-10 Score  |  98.50  |  99.03 |
+
+### Citations
+
+@article{DBLP:journals/corr/abs-1912-11370,
+  author    = {Alexander Kolesnikov and Lucas Beyer and Xiaohua Zhai and Joan Puigcerver and Jessica Yung and Sylvain Gelly and Neil Houlsby},
+  title     = {Large Scale Learning of General Visual Representations for Transfer},
+  year      = {2019},
+  url       = {http://arxiv.org/abs/1912.11370}}
+
+@article{DBLP:journals/corr/abs-2007-00708,
+  author    = {Linnan Wang and Rodrigo Fonseca and Yuandong Tian},
+  title     = {Learning Search Space Partition for Black-box Optimization using Monte
+               Carlo Tree Search},
+  year      = {2020},
+  url       = {https://arxiv.org/abs/2007.00708}}
