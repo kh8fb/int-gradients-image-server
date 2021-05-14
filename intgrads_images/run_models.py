@@ -91,7 +91,8 @@ def run_models(model_name, model, transforms, img, device, target_class):
     -------
     gradients_dict: dict
         Dictionary containing the gradient tensors with the following keys:
-        "integrated_gradients", "intermediate_gradients", "step_sizes", and "intermediates".
+        "integrated_gradients", "intermediate_gradients", "step_sizes", "output",
+        "target_class", and "intermediates".
     """
     input_img = prepare_input(img, transforms).to(device)
     baseline = input_img * 0 # using a 0 baseline... could use random noise instead
@@ -101,9 +102,11 @@ def run_models(model_name, model, transforms, img, device, target_class):
     if model_name == "bit":
         idg = IntermediateGradients(bit_sequence_forward_func)
         ig = IntegratedGradients(bit_sequence_forward_func)
+        output = bit_sequence_forward_func(input_img, model)
     elif model_name == "lanet":
         idg = IntermediateGradients(lanet_sequence_forward_func)
         ig = IntegratedGradients(lanet_sequence_forward_func)
+        output = lanet_sequence_forward_func(input_img, model)
     grads, step_sizes, intermediates = idg.attribute(inputs=input_img,
                                                      baselines=baseline,
                                                      additional_forward_args=(
@@ -124,6 +127,8 @@ def run_models(model_name, model, transforms, img, device, target_class):
     grads_dict = {"integrated_directional_grads": grads.to("cpu"),
                   "step_sizes": step_sizes.to("cpu"),
                   "intermediates": intermediates.to("cpu"),
-                  "integrated_grads": integrated_grads.to("cpu")}
+                  "integrated_grads": integrated_grads.to("cpu"),
+                  "output": output.to("cpu"),
+                  "target_class": target_class}
 
     return grads_dict
