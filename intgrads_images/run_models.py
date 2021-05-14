@@ -102,11 +102,15 @@ def run_models(model_name, model, transforms, img, device, target_class):
     if model_name == "bit":
         idg = IntermediateGradients(bit_sequence_forward_func)
         ig = IntegratedGradients(bit_sequence_forward_func)
+        model.eval()
         output = bit_sequence_forward_func(input_img, model)
+        model.train()
     elif model_name == "lanet":
         idg = IntermediateGradients(lanet_sequence_forward_func)
         ig = IntegratedGradients(lanet_sequence_forward_func)
+        model.eval() # don't want to record gradients here
         output = lanet_sequence_forward_func(input_img, model)
+        model.train()
     grads, step_sizes, intermediates = idg.attribute(inputs=input_img,
                                                      baselines=baseline,
                                                      additional_forward_args=(
